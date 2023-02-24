@@ -1,10 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://b83tkfvp88hl5"]
+[gd_scene load_steps=13 format=3 uid="uid://b83tkfvp88hl5"]
 
 [ext_resource type="Texture2D" uid="uid://d0ajwuxg56cs4" path="res://sprites/background.png" id="1_0ewso"]
 [ext_resource type="Texture2D" uid="uid://cxh1770ssw6dt" path="res://astar/tile.png" id="1_7r71c"]
-[ext_resource type="Texture2D" uid="uid://bot1xa3vn5x1l" path="res://sprites/mockup.png" id="1_r3iyl"]
 [ext_resource type="PackedScene" uid="uid://bn8dcquhl5vu4" path="res://player/player.tscn" id="1_rctkh"]
+[ext_resource type="Texture2D" uid="uid://c6b5dbhskaen3" path="res://sprites/mockup-water.png" id="2_k5qq5"]
 [ext_resource type="Script" path="res://astar/pathfinder.gd" id="2_wlott"]
+[ext_resource type="Texture2D" uid="uid://d35ucbyrsvvod" path="res://sprites/mockup-land.png" id="4_asybw"]
+[ext_resource type="Shader" path="res://water-test.gdshader" id="6_2tevi"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q8o7b"]
+noise_type = 0
+frequency = 0.025
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cfxck"]
+width = 480
+height = 480
+seamless = true
+noise = SubResource("FastNoiseLite_q8o7b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h3bey"]
+shader = ExtResource("6_2tevi")
+shader_parameter/speed = 0.01
+shader_parameter/strength = 0.0021
+shader_parameter/noice = SubResource("NoiseTexture2D_cfxck")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scttf"]
 texture = ExtResource("1_7r71c")
@@ -24,9 +42,21 @@ offset_bottom = 512.0
 texture = ExtResource("1_0ewso")
 stretch_mode = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="water" type="Sprite2D" parent="."]
 position = Vector2(64, 64)
-texture = ExtResource("1_r3iyl")
+texture = ExtResource("2_k5qq5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_h3bey")
+offset_left = -384.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 512.0
+mouse_filter = 2
+
+[node name="land" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("4_asybw")
 
 [node name="astar" type="TileMap" parent="."]
 visible = false
