@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Project A"
+run/main_scene="res://test.tscn"
+config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/show_image=false
+config/icon="res://icon.svg"
+run/size/viewport_height=320
+run/size/viewport_width=160
+run/snap/snap_2d_vertices_to_pixel=false
+run/snap/snap_2d_transforms_to_pixel=false
+run/stretch/mode="canvas_items"
+
+[autoload]
+
+Saver="*res://globals/saver.gd"
+
+[display]
+
+window/size/viewport_width=240
+window/size/viewport_height=240
+window/size/window_width_override=720
+window/size/window_height_override=720
+window/handheld/orientation=1
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.4, 0.4, 0.4, 1)
+2d/snap/snap_2d_vertices_to_pixel=true
+textures/canvas_textures/default_texture_filter=0

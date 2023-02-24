@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://multiplayer/multiplayer.gd" id="1_1wrgx"]
+
+[node name="multiplayer" type="Node2D"]
+script = ExtResource("1_1wrgx")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player/player.tscn")
+spawn_path = NodePath("../../Players")

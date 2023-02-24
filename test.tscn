@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://b83tkfvp88hl5"]
+
+[ext_resource type="Texture2D" uid="uid://d0ajwuxg56cs4" path="res://sprites/background.png" id="1_0ewso"]
+[ext_resource type="Texture2D" uid="uid://cxh1770ssw6dt" path="res://astar/tile.png" id="1_7r71c"]
+[ext_resource type="Texture2D" uid="uid://bot1xa3vn5x1l" path="res://sprites/mockup.png" id="1_r3iyl"]
+[ext_resource type="PackedScene" uid="uid://bn8dcquhl5vu4" path="res://player/player.tscn" id="1_rctkh"]
+[ext_resource type="Script" path="res://astar/pathfinder.gd" id="2_wlott"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scttf"]
+texture = ExtResource("1_7r71c")
+use_texture_padding = false
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v3a0m"]
+sources/0 = SubResource("TileSetAtlasSource_scttf")
+
+[node name="test" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+offset_left = -384.0
+offset_top = -384.0
+offset_right = 512.0
+offset_bottom = 512.0
+texture = ExtResource("1_0ewso")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("1_r3iyl")
+
+[node name="astar" type="TileMap" parent="."]
+visible = false
+modulate = Color(0.592157, 0, 0.152941, 0.2)
+tile_set = SubResource("TileSet_v3a0m")
+format = 2
+layer_0/tile_data = PackedInt32Array(5767208, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 393223, 0, 0, 393222, 0, 0, 393218, 0, 0, 393217, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327686, 0, 0, 327687, 0, 0, 262151, 0, 0, 262150, 0, 0, 262149, 0, 0, 262148, 0, 0, 262146, 0, 0, 262145, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 131079, 0, 0, 131078, 0, 0, 131077, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 7, 0, 0, 6, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 327685, 0, 0, 327684, 0, 0, 262147, 0, 0, 0, 0, 0)
+script = ExtResource("2_wlott")
+
+[node name="path" type="Node2D" parent="."]
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="player" parent="Players" instance=ExtResource("1_rctkh")]
+position = Vector2(72, 72)
