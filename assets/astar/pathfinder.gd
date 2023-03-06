@@ -34,16 +34,7 @@ func get_point_position(id):
 func get_cell_position(global_position):	
 	return to_global(map_to_local(global_position))
 
-var draw_target: Vector2 = Vector2(0,0)
-var draw_path: PackedVector2Array = []
-func _draw():
-	draw_circle(round(draw_target), 1, Color(0, 0, 0, 1))
-	for pos in draw_path:
-		draw_circle(pos, 1, Color(0, 0, 0, 0.8))
-
 func find_path(start: Vector2, target: Vector2) -> PackedVector2Array:
-	draw_target = target
-	
 	var start_cell = local_to_map(start)
 	var start_id = astar.get_closest_point(start_cell)
 	var target_cell = local_to_map(target)
@@ -54,7 +45,3 @@ func find_path(start: Vector2, target: Vector2) -> PackedVector2Array:
 		path[i] = map_to_local(path[i])
 
 	return path
-	
-func debug_path(p):
-	draw_path = p
-	queue_redraw()

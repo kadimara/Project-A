@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://dbyir28sun5ot"]
+
+[ext_resource type="Texture2D" uid="uid://necs67dalbqs" path="res://assets/fire/burning_loop_small.png" id="1_kop5n"]
+[ext_resource type="Script" path="res://assets/fire/fire.gd" id="1_q0io7"]
+[ext_resource type="PackedScene" uid="uid://bjvj6yx7x8w3g" path="res://assets/light/light.tscn" id="2_bg1qa"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n5ppk"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7afs7"]
+atlas = ExtResource("1_kop5n")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aq8e"]
+atlas = ExtResource("1_kop5n")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6sj6"]
+atlas = ExtResource("1_kop5n")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2evl0"]
+atlas = ExtResource("1_kop5n")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6mrg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7afs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aq8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6sj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2evl0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm0y2"]
+size = Vector2(8, 8)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_q0io7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_n5ppk")
+sprite_frames = SubResource("SpriteFrames_g6mrg")
+autoplay = "default"
+offset = Vector2(0, -2)
+
+[node name="light" parent="." instance=ExtResource("2_bg1qa")]
+color = Color(1, 0.701961, 0, 1)
+flicker = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fm0y2")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

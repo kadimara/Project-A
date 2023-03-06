@@ -22,6 +22,7 @@ var directionDict = {
 var direction = Vector2(0, 0)
 
 func _ready():
+	position = Vector2(-8, -8)  + round(position / 16) * 16
 	$AnimatedSprite2D.play()
 	mouse_position = position
 	float_position = position
@@ -36,6 +37,7 @@ func _ready():
 
 func _physics_process(delta):
 	animate()
+	queue_redraw()
 	
 	if path.size() == 0:
 		return
@@ -44,8 +46,7 @@ func _physics_process(delta):
 	position = position.move_toward(toPosition, delta * speed)
 	if toPosition == position:
 		path.remove_at(0)
-		pathfinder.debug_path(path)
-		
+	
 	return
 
 func _unhandled_input (event):
@@ -68,6 +69,11 @@ func animate():
 		$AnimatedSprite2D.speed_scale = speed_scale
 		$AnimatedSprite2D.play('walk_' + directionDict[direction])
 
+func _draw():
+	draw_circle(round(mouse_position) - position, 1, Color(0, 0, 0, 0.8))
+	for pos in path:
+		draw_circle(pos - position, 1, Color(0, 0, 0, 0.2))
+
 func save():
 	return {
 		"filename" : get_scene_file_path(),
@@ -75,3 +81,20 @@ func save():
 		"pos_x" : position.x, # Vector2 is not supported by JSON
 		"pos_y" : position.y,
 	}
+
+var hitDir = -1
+func hit():
+	hitDir = hitDir * -1
+	var sprite = $Sprite2D
+	if $AnimatedSprite2D:
+		sprite = $AnimatedSprite2D
+		
+	var frameSpeed = 1.0 / 12
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "rotation", 0.08 * hitDir, 0)
+	tween.tween_interval(frameSpeed)
+	tween.tween_property(sprite.material, "shader_parameter/opacity", 1, 0)
+	tween.tween_interval(frameSpeed)
+	tween.tween_property(sprite.material, "shader_parameter/opacity", 0, 0)
+	tween.tween_interval(frameSpeed)
+	tween.tween_property(self, "rotation", 0, 0)

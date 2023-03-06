@@ -28,8 +28,9 @@ Saver="*res://globals/saver.gd"
 
 window/size/viewport_width=240
 window/size/viewport_height=240
+window/size/mode=2
 window/size/window_width_override=720
-window/size/window_height_override=720
+window/size/window_height_override=480
 window/handheld/orientation=1
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
@@ -37,6 +38,8 @@ window/stretch/aspect="keep_width"
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
 environment/defaults/default_clear_color=Color(0.4, 0.4, 0.4, 1)
 2d/snap/snap_2d_vertices_to_pixel=true
 textures/canvas_textures/default_texture_filter=0

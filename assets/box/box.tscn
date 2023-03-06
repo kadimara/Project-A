@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgr6halcvgd8m"]
+
+[ext_resource type="Texture2D" uid="uid://bwjr2xdac0gk6" path="res://assets/box/box.png" id="1_ihhr4"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iu62q"]
+polygon = PackedVector2Array(-8, -13, -8, 3, 8, 3, 8, -13)
+
+[node name="box" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(0, -4)
+texture = ExtResource("1_ihhr4")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 5)
+occluder = SubResource("OccluderPolygon2D_iu62q")

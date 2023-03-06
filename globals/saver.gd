@@ -1,8 +1,8 @@
 extends Node
 
 func _ready():
-#	load_game()
-#	init_save_loop()
+	load_game()
+	init_save_loop()
 	pass
 
 # Note: This can be called from anywhere inside the tree. This function is

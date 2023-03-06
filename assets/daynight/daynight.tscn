@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwsqqc68ljhbm"]
+
+[ext_resource type="Script" path="res://assets/daynight/daynight.gd" id="1_g5vve"]
+
+[node name="CanvasModulate" type="CanvasModulate"]
+position = Vector2(22, 21)
+script = ExtResource("1_g5vve")
+nightColor = Color(0.160784, 0.0352941, 0.231373, 1)

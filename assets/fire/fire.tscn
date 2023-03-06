@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw1w15ih8480l"]
+
+[ext_resource type="Texture2D" uid="uid://bsnkougyjdq1v" path="res://assets/fire/burning_loop_green_medium.png" id="1_bfgpn"]
+[ext_resource type="PackedScene" uid="uid://bjvj6yx7x8w3g" path="res://assets/light/light.tscn" id="2_cdwdd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qu2m5"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb37l"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2n46"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc7rs"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rpmk"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6vqe"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhwbh"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ijx"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muwdg"]
+atlas = ExtResource("1_bfgpn")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lihvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb37l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2n46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc7rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rpmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6vqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhwbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2ijx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muwdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+material = SubResource("CanvasItemMaterial_qu2m5")
+sprite_frames = SubResource("SpriteFrames_lihvk")
+autoplay = "default"
+offset = Vector2(0, -12)
+
+[node name="light" parent="." instance=ExtResource("2_cdwdd")]
+color = Color(0.392157, 1, 0.168627, 1)
+energy = 1.2
+texture_scale = 2.0
+flicker = true
