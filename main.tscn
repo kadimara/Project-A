@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://doofb3wcga7du"]
+
+[ext_resource type="PackedScene" uid="uid://cwwpcatcqgqaj" path="res://world.tscn" id="1_5lj5d"]
+
+[node name="main" type="Node2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+snap_2d_vertices_to_pixel = true
+size = Vector2i(240, 240)
+render_target_update_mode = 4
+
+[node name="test" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_5lj5d")]
+
+[node name="CameraMain" type="Camera2D" parent="."]
+enabled = false
+position_smoothing_enabled = true

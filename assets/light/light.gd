@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	var color = daynight.color
 	var grayValue = 0.299 * color.r + 0.587 * color.g + 0.114 * color.b
-	var energyScale = 1 - grayValue / 100 * 80
+	var energyScale = 1 - grayValue / 100 * 100
 	energy = energy_initial * energyScale
 
 	if flicker:

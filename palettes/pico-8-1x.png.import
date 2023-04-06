@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cviy1tcgdu5y1"
-path.s3tc="res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.s3tc.ctex"
-path.etc2="res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.etc2.ctex"
+uid="uid://lxdyo7iv44ad"
+path.s3tc="res://.godot/imported/pico-8-1x.png-5db61e4841800d868add261bb5e4c82c.s3tc.ctex"
+path.etc2="res://.godot/imported/pico-8-1x.png-5db61e4841800d868add261bb5e4c82c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/noice_water.png"
-dest_files=["res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.s3tc.ctex", "res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.etc2.ctex"]
+source_file="res://palettes/pico-8-1x.png"
+dest_files=["res://.godot/imported/pico-8-1x.png-5db61e4841800d868add261bb5e4c82c.s3tc.ctex", "res://.godot/imported/pico-8-1x.png-5db61e4841800d868add261bb5e4c82c.etc2.ctex"]
 
 [params]
 

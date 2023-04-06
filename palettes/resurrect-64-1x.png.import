@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cviy1tcgdu5y1"
-path.s3tc="res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.s3tc.ctex"
-path.etc2="res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.etc2.ctex"
+uid="uid://cv2jiq8bdb1i5"
+path.s3tc="res://.godot/imported/resurrect-64-1x.png-cc11eee34670fdd0704653ef7d908308.s3tc.ctex"
+path.etc2="res://.godot/imported/resurrect-64-1x.png-cc11eee34670fdd0704653ef7d908308.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/noice_water.png"
-dest_files=["res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.s3tc.ctex", "res://.godot/imported/noice_water.png-6170b2314837d8ca856892fcd3bb0537.etc2.ctex"]
+source_file="res://palettes/resurrect-64-1x.png"
+dest_files=["res://.godot/imported/resurrect-64-1x.png-cc11eee34670fdd0704653ef7d908308.s3tc.ctex", "res://.godot/imported/resurrect-64-1x.png-cc11eee34670fdd0704653ef7d908308.etc2.ctex"]
 
 [params]
 

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bat6rr1rsqcmq"]
+
+[ext_resource type="Script" path="res://assets/chicken/chicken.gd" id="1_hshdf"]
+[ext_resource type="Texture2D" uid="uid://pt1mktlmhtet" path="res://assets/chicken/chicken-Sheet.png" id="1_ncx3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ethn1"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gautm"]
+radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hdpw"]
+atlas = ExtResource("1_ncx3n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gcxf"]
+atlas = ExtResource("1_ncx3n")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0vam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hdpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gcxf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="chicken" type="Area2D"]
+script = ExtResource("1_hshdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ethn1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gautm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_l0vam")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

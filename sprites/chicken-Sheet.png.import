@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpe1xhl7ovuwf"
-path="res://.godot/imported/character_sheet.png-18a738f3fae3922f17ff1b5d44199d4d.ctex"
+uid="uid://djhcsc0x74l46"
+path="res://.godot/imported/chicken-Sheet.png-6f3b305bd7f7df806f93f03e3ffcc077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/character_sheet.png"
-dest_files=["res://.godot/imported/character_sheet.png-18a738f3fae3922f17ff1b5d44199d4d.ctex"]
+source_file="res://sprites/chicken-Sheet.png"
+dest_files=["res://.godot/imported/chicken-Sheet.png-6f3b305bd7f7df806f93f03e3ffcc077.ctex"]
 
 [params]
 

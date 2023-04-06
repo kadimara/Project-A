@@ -78,6 +78,5 @@ offset = Vector2(0, -12)
 
 [node name="light" parent="." instance=ExtResource("2_cdwdd")]
 color = Color(0.392157, 1, 0.168627, 1)
-energy = 1.2
 texture_scale = 2.0
 flicker = true

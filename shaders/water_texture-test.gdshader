@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform sampler2D noice;
-uniform float speed: hint_range(0.01, 0.05) = 0.1;
+uniform float speed: hint_range(0.01, 0.05) = 0.04;
 uniform float strength = 0.004;
 
 void fragment() {

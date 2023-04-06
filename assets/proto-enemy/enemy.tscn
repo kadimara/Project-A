@@ -1,111 +1,110 @@
-[gd_scene load_steps=33 format=3 uid="uid://c0rmlfu0sxtf5"]
+[gd_scene load_steps=31 format=3 uid="uid://bjbtyqhu5fr5e"]
 
-[ext_resource type="Script" path="res://assets/player/player.gd" id="1_6bgpg"]
-[ext_resource type="Shader" path="res://assets/player/hit.gdshader" id="2_cv20t"]
-[ext_resource type="Texture2D" uid="uid://v3dp3uyg815a" path="res://sprites/base-Sheet.png" id="2_ksnxg"]
-[ext_resource type="Script" path="res://scripts/zoom.gd" id="4_nfsba"]
+[ext_resource type="Script" path="res://assets/proto-enemy/enemy.gd" id="1_niok5"]
+[ext_resource type="Shader" path="res://assets/player/hit.gdshader" id="2_r2fgf"]
+[ext_resource type="Texture2D" uid="uid://v3dp3uyg815a" path="res://sprites/base-Sheet.png" id="3_y2sfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abtlb"]
 size = Vector2(8, 8)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_huou8"]
-shader = ExtResource("2_cv20t")
+shader = ExtResource("2_r2fgf")
 shader_parameter/opacity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4fbk"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw83g"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6qbd"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdkc1"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2j3ac"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4f36k"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vkyt5"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mejs8"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcos7"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xo35f"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evgun"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2e80"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpx12"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prjnj"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(128, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_401cr"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(160, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dh54l"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(192, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_guf2j"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j771"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(256, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_au3a7"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_di5na"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xxul"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6m2e"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(288, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay6lc"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(320, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acvu6"]
-atlas = ExtResource("2_ksnxg")
+atlas = ExtResource("3_y2sfe")
 region = Rect2(352, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_chcar"]
@@ -122,7 +121,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_e",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -136,7 +135,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_n",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -150,7 +149,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_s",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,7 +163,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_w",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,13 +234,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_e156n"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/sync = true
-
-[node name="player" type="Area2D" groups=["Persist"]]
-script = ExtResource("1_6bgpg")
+[node name="enemy" type="Area2D"]
+script = ExtResource("1_niok5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_abtlb")
@@ -251,17 +245,8 @@ light_mask = 3
 material = SubResource("ShaderMaterial_huou8")
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_chcar")
-animation = &"walk_w"
+animation = &"idle_s"
+autoplay = "idle_s"
 offset = Vector2(0, -7)
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_e156n")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-script = ExtResource("4_nfsba")
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

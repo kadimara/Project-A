@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnubkvcipym5s"]
+
+[ext_resource type="Script" path="res://assets/dummy/dummy.gd" id="1_63kw0"]
+[ext_resource type="Texture2D" uid="uid://b4cn454jwf0ak" path="res://assets/dummy/dummy-Sheet.png" id="1_jjuc1"]
+[ext_resource type="Shader" path="res://assets/player/hit.gdshader" id="1_suefq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxn35"]
+size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hefm4"]
+shader = ExtResource("1_suefq")
+shader_parameter/opacity = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wpjv"]
+atlas = ExtResource("1_jjuc1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78m5d"]
+atlas = ExtResource("1_jjuc1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuyl6"]
+atlas = ExtResource("1_jjuc1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1ktq"]
+atlas = ExtResource("1_jjuc1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olbjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wpjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78m5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuyl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1ktq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="dummy" type="Area2D"]
+script = ExtResource("1_63kw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kxn35")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_hefm4")
+sprite_frames = SubResource("SpriteFrames_olbjo")
+frame = 3
+offset = Vector2(0, -5)
